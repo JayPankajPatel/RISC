@@ -1,1 +1,2 @@
-An implementation of the Reduced Instruction. 
+#RISC
+##An implementation of the Reduced Instruction. 
