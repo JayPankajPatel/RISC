@@ -1,0 +1,28 @@
+Vivado Simulator v2024.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/jay/Repos/AMD/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot N_bit_adder_tb_behav xil_defaultlib.N_bit_adder_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv:69]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv:75]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv:89]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv:95]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv:110]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv:116]
+Completed static elaboration
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 69, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 75, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 89, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 95, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 110, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 116, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/N_bit_adder_tb.sv
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.one_bit_adder
+Compiling module xil_defaultlib.N_bit_adder_default
+Compiling module xil_defaultlib.N_bit_adder_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot N_bit_adder_tb_behav
