@@ -25,19 +25,17 @@ module N_bit_subtract #(
 ) (
     input logic signed [N-1:0] A,
     input logic signed [N-1:0] B,
-    input logic cin,
-    output logic cout,
-    output logic signed [N-1:0] Sum
+    output logic signed [N-1:0] Sum,
+    output logic overflow
 );
-  logic signed [N-1:0] negative_B;
   N_bit_adder #(.N(N)) SUB (
 
-     .A(),
-     .B(),
-     .cin(),
+     .A(A),
+     .B(~B),
+     .cin(1),
      .cout(),
-     .Sum()
+     .Sum(Sum)
 
-    );
+    ); 
 
 endmodule
