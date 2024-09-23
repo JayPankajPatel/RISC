@@ -1,4 +1,58 @@
 Time resolution is 1 ps
-Error: Wrong Sout: Expected 0, Got 1
-Time: 50 ns  Iteration: 0  Process: /tb_shiftreg/Initial32_2  Scope: tb_shiftreg  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shiftreg.sv Line: 61
-$finish called at time : 60 ns : File "/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shiftreg.sv" Line 65
+Test 0: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 0: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 100 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 1: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 1: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 150 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 2: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 2: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 200 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 3: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 3: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 250 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 4: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 4: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 300 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 5: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 5: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 350 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 6: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 6: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 400 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 7: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 7: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 450 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 8: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 8: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 500 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 9: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 9: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 550 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 10: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 10: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 600 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 11: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Error: Assertion Failed at Test 11: tb_A = x, tb_B = x, tb_Product = 0, Expected Product = x
+Time: 650 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 12: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Error: Assertion Failed at Test 12: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Time: 700 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 13: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Error: Assertion Failed at Test 13: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Time: 750 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 14: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Error: Assertion Failed at Test 14: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Time: 800 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 15: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Error: Assertion Failed at Test 15: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Time: 850 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 16: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Error: Assertion Failed at Test 16: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Time: 900 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 17: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Error: Assertion Failed at Test 17: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Time: 950 ns  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65
+Test 18: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Error: Assertion Failed at Test 18: tb_A = x, tb_B = x, tb_Product = X, Expected Product = x
+Time: 1 us  Iteration: 0  Process: /tb_shift_add_mult/Initial49_68  Scope: tb_shift_add_mult.Block56_69  File: /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_shift_add_mult.sv Line: 65

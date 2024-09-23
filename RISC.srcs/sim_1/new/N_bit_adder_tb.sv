@@ -18,8 +18,10 @@ module N_bit_adder_tb ();
 
   reg signed [N-1:0] tb_A, tb_B;
   reg tb_cin;
+  reg en; 
   wire tb_cout;
   wire signed [N-1:0] tb_Sum;
+  wire tb_overflow; 
 
   reg signed [N-1:0] expected_Sum;
   reg expected_cout;
@@ -29,14 +31,16 @@ module N_bit_adder_tb ();
   ) MUT (
       .A(tb_A),
       .B(tb_B),
+      .en(en), 
       .cin(tb_cin),
       .cout(tb_cout),
-      .Sum(tb_Sum)
+      .Sum(tb_Sum), 
+      .overflow(tb_overflow)
   );
 
   // Stimulus block
   initial begin
-
+     en = 1;
     // Generate test cases
     for (int i = 0; i < NUM_TESTS; i++) begin
       // Assign random values to inputs
@@ -96,6 +100,8 @@ module N_bit_adder_tb ();
           "Assertion Failed at Test %0d: A = %0d, B = %0d, cin = %0d, Sum = %0d, cout = %0d, Expected_Sum = %0d, Expected_cout = %0d",
           NUM_TESTS+1, tb_A, tb_B, tb_cin, tb_Sum, tb_cout, expected_Sum, expected_cout
       );
+      
+      assert(tb_overflow == 1) else $fatal("overflow happened but was not detected"); 
 
     // Minimum value edge case
     tb_A = {32{1'b0}};

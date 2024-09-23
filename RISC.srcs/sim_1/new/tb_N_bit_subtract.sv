@@ -36,6 +36,7 @@ module tb_N_bit_subtract(
   ) MUT (
       .A(tb_A),
       .B(tb_B),
+      .en(1), 
       .Sum(tb_Sum)
   );
 

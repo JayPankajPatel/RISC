@@ -23,12 +23,23 @@
 module one_bit_adder(
     input a,
     input b,
+    input en,
     input cin,
-    output sum,
-    output cout
+    output reg sum,
+    output reg cout
     );
     
-    assign sum = a ^ b ^ cin; 
-    assign cout = (a & b) | (b & cin) | (a & cin); 
+    always@(*) begin
+        if (en) begin 
+            sum = a ^ b ^ cin; 
+            cout = (a & b) | (b & cin) | (a & cin); 
+        end
+        else begin 
+            sum = 0;
+            cout = 0; 
+        end
+    end
+    
+    
     
 endmodule

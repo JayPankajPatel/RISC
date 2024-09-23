@@ -1,15 +1,22 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/jay/Repos/AMD/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_shiftreg_behav xil_defaultlib.tb_shiftreg xil_defaultlib.glbl -log elaborate.log 
+Running: /home/jay/Repos/AMD/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_shift_add_mult_behav xil_defaultlib.tb_shift_add_mult xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-9543] actual bit length 32 differs from formal bit length 1 for port 'cin' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sources_1/new/shift_add_mult.sv:57]
+WARNING: [VRFC 10-9543] actual bit length 6 differs from formal bit length 32 for port 'A' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sources_1/new/shift_add_mult.sv:64]
+WARNING: [VRFC 10-9543] actual bit length 6 differs from formal bit length 32 for port 'Sum' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sources_1/new/shift_add_mult.sv:67]
+WARNING: [VRFC 10-9543] actual bit length 32 differs from formal bit length 1 for port 'cin' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sources_1/new/N_bit_subtract.sv:37]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.shiftreg
-Compiling module xil_defaultlib.tb_shiftreg
+Compiling module xil_defaultlib.one_bit_adder
+Compiling module xil_defaultlib.N_bit_adder_default
+Compiling module xil_defaultlib.N_bit_subtract
+Compiling module xil_defaultlib.shift_add_mult
+Compiling module xil_defaultlib.tb_shift_add_mult
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_shiftreg_behav
+Built simulation snapshot tb_shift_add_mult_behav

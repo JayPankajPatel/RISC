@@ -25,6 +25,7 @@ module N_bit_subtract #(
 ) (
     input logic signed [N-1:0] A,
     input logic signed [N-1:0] B,
+    input logic en,
     output logic signed [N-1:0] Sum,
     output logic overflow
 );
@@ -32,10 +33,12 @@ module N_bit_subtract #(
 
      .A(A),
      .B(~B),
+     .en(en), 
      .cin(1),
      .cout(),
-     .Sum(Sum)
-
+     .Sum(Sum), 
+     .overflow(overflow)
     ); 
+    
 
 endmodule
