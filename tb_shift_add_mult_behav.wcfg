@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_N_bit_logical_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_N_bit_logical" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="30.001 ns"></ZoomEndTime>
+      <Cursor1Time time="9.656 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="100"></NameColumnWidth>
+      <ValueColumnWidth column_width="137"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="array" fp_name="/tb_N_bit_logical/tb_NOT_A">
+      <obj_property name="ElementShortName">tb_NOT_A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_NOT_A[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_N_bit_logical/tb_en">
+      <obj_property name="ElementShortName">tb_en</obj_property>
+      <obj_property name="ObjectShortName">tb_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_N_bit_logical/tb_XOR_A_B">
+      <obj_property name="ElementShortName">tb_XOR_A_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_XOR_A_B[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_N_bit_logical/tb_OR_A_B">
+      <obj_property name="ElementShortName">tb_OR_A_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_OR_A_B[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_N_bit_logical/tb_NOT_B">
+      <obj_property name="ElementShortName">tb_NOT_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_NOT_B[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_N_bit_logical/tb_NOT_A">
+      <obj_property name="ElementShortName">tb_NOT_A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_NOT_A[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_N_bit_logical/tb_B">
+      <obj_property name="ElementShortName">tb_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_B[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_N_bit_logical/tb_AND_A_B">
+      <obj_property name="ElementShortName">tb_AND_A_B[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_AND_A_B[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_N_bit_logical/tb_A">
+      <obj_property name="ElementShortName">tb_A[31:0]</obj_property>
+      <obj_property name="ObjectShortName">tb_A[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_N_bit_logical/N">
+      <obj_property name="ElementShortName">N[31:0]</obj_property>
+      <obj_property name="ObjectShortName">N[31:0]</obj_property>
+   </wvobject>
+</wave_config>
