@@ -27,12 +27,10 @@ module N_bit_adder #(
     input logic en, 
     input logic  cin,
     output logic cout,
-    output logic signed [N-1:0] Sum, 
-    output overflow
+    output logic signed [N-1:0] Sum 
 );
 
   reg carry_out_temp[N-1:0];
-
   one_bit_adder FA1 (
     .a(A[0]),
     .b(B[0]),
@@ -58,9 +56,6 @@ module N_bit_adder #(
     endgenerate
 
     assign cout = carry_out_temp[N-1];
-    assign overflow = (A[N-1] ^ B[N-1]) ? 0 : (A[N-1] ^ Sum[N-1]);
-
-
 
 endmodule
 

@@ -1,14 +1,65 @@
 Vivado Simulator v2024.1
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
-Running: /home/jay/Repos/AMD/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_N_bit_logical_behav xil_defaultlib.tb_N_bit_logical xil_defaultlib.glbl -log elaborate.log 
+Running: /home/jay/Repos/AMD/Vivado/2024.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_alu_behav xil_defaultlib.tb_alu xil_defaultlib.glbl -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-9543] actual bit length 32 differs from formal bit length 1 for port 'AND_A_B' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_N_bit_logical.sv:16]
-WARNING: [VRFC 10-9543] actual bit length 32 differs from formal bit length 1 for port 'OR_A_B' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_N_bit_logical.sv:17]
-WARNING: [VRFC 10-9543] actual bit length 32 differs from formal bit length 1 for port 'XOR_A_B' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_N_bit_logical.sv:18]
-WARNING: [VRFC 10-9543] actual bit length 32 differs from formal bit length 1 for port 'NOT_A' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_N_bit_logical.sv:19]
-WARNING: [VRFC 10-9543] actual bit length 32 differs from formal bit length 1 for port 'NOT_B' [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_N_bit_logical.sv:20]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:37]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:38]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:39]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:40]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:51]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:52]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:63]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:64]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:65]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:66]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:77]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:89]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:97]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:105]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:114]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:115]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:124]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:133]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:144]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:151]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:158]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:167]
+WARNING: [VRFC 10-8967] first argument of $fatal is invalid; expected 0, 1 or 2 [/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv:176]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 37, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 38, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 39, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 40, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 51, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 52, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 63, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 64, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 65, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 66, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 77, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 89, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 97, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 105, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 114, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 115, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 124, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 133, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 144, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 151, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 158, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 167, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+INFO: [XSIM 43-4329] Assuming default value 1 for the first arguement of $fatal at Line 176, File /home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/RISC.srcs/sim_1/new/tb_alu.sv
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.one_bit_adder
+Compiling module xil_defaultlib.N_bit_adder_default
+Compiling module xil_defaultlib.N_bit_logical_operators
+Compiling module xil_defaultlib.N_bit_comparator
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.tb_alu
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_alu_behav

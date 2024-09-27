@@ -31,7 +31,7 @@ module N_bit_comparator #(parameter N = 32)
   output logic A_less_B,
   output logic A_lesseq_B,
   output logic A_greater_B,
-  output logic A_greateq_B
+  output logic A_greatereq_B
 );
 
   logic [N-1:0] xnor_result;
@@ -56,7 +56,7 @@ module N_bit_comparator #(parameter N = 32)
     
         // Greater than comparison
         A_greater_B = ~(A_equal_B | A_less_B);
-        A_greateq_B = A_greater_B | A_equal_B;
+        A_greatereq_B = A_greater_B | A_equal_B;
         end
         
       else begin
@@ -65,7 +65,7 @@ module N_bit_comparator #(parameter N = 32)
         A_less_B  = {N{1'bz}};
         A_lesseq_B = {N{1'bz}};
         A_greater_B = {N{1'bz}};
-        A_greateq_B = {N{1'bz}};
+        A_greatereq_B = {N{1'bz}};
       end
   end
 
