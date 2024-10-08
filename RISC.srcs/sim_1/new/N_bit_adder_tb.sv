@@ -26,7 +26,7 @@ module N_bit_adder_tb ();
   reg signed [N-1:0] expected_Sum;
   reg expected_cout;
 
-  N_bit_adder #(
+  N_bit_Adder #(
       .N(N)
   ) MUT (
       .A(tb_A),
@@ -34,9 +34,9 @@ module N_bit_adder_tb ();
       .en(en), 
       .cin(tb_cin),
       .cout(tb_cout),
-      .Sum(tb_Sum), 
-      .overflow(tb_overflow)
+      .Sum(tb_Sum)
   );
+
 
   // Stimulus block
   initial begin
@@ -47,8 +47,7 @@ module N_bit_adder_tb ();
       tb_A   = $urandom % {32{1'b1}}; //Random value from 0 to 2^32 -1;
       tb_B   = $urandom % {32{1'b1}}; //Random value from 0 to 2^32 -1;
       tb_cin = $urandom % 2;  // Random value 0 or 1
-
-
+      
       // Perform the addition
       {expected_cout, expected_Sum} = tb_A + tb_B + tb_cin;
 

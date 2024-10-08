@@ -1,72 +1,82 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/23/2024 10:52:47 PM
-// Design Name: 
-// Module Name: N_bit_compare
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 module N_bit_comparator #(parameter N = 32)
 (
   input  logic [N-1:0] A,
   input  logic [N-1:0] B,
+  input  logic en,
   
-  input logic en,
-  
-  output logic A_equal_B,
-  output logic A_neq_B,
-  output logic A_less_B,
-  output logic A_lesseq_B,
-  output logic A_greater_B,
-  output logic A_greatereq_B
+  // Unsigned comparison outputs
+  output logic unsigned_A_equal_B,
+  output logic unsigned_A_neq_B,
+  output logic unsigned_A_less_B,
+  output logic unsigned_A_lesseq_B,
+  output logic unsigned_A_greater_B,
+  output logic unsigned_A_greatereq_B,
+
+  // Signed comparison outputs
+  output logic signed_A_equal_B,
+  output logic signed_A_neq_B,
+  output logic signed_A_less_B,
+  output logic signed_A_lesseq_B,
+  output logic signed_A_greater_B,
+  output logic signed_A_greatereq_B
 );
 
-  logic [N-1:0] xnor_result;
-  logic [N-1:0] less_than_bits;
-  logic [N:0] carry;
+  wire [N-1:0] XOR_A_B, NOT_A, NOT_B;
+  wire [N-1:0] A_minus_B_unsigned;
+  wire [N-1:0] A_minus_B_signed;
+  wire carry_out_unsigned;
+  wire subtract_cin = 1'b1;  // Carry-in for 2's complement subtraction
 
-  always_comb begin
-        if(en) begin 
-        // Equality check using XNOR
-        xnor_result = ~(A ^ B);
-        A_equal_B = &xnor_result;
-        A_neq_B = ~A_equal_B;
-    
-        // Less than comparison
-        carry[0] = 1'b0;
-        for (int i = 0; i < N; i++) begin
-          carry[i+1] = (B[i] & ~A[i]) | ((B[i] ^ ~A[i]) & carry[i]);
-        end
-        
-        A_less_B = carry[N];
-        A_lesseq_B = A_less_B | A_equal_B;
-    
-        // Greater than comparison
-        A_greater_B = ~(A_equal_B | A_less_B);
-        A_greatereq_B = A_greater_B | A_equal_B;
-        end
-        
-      else begin
-        A_equal_B   = {N{1'bz}}; 
-        A_neq_B   = {N{1'bz}};
-        A_less_B  = {N{1'bz}};
-        A_lesseq_B = {N{1'bz}};
-        A_greater_B = {N{1'bz}};
-        A_greatereq_B = {N{1'bz}};
-      end
-  end
+  // Instantiate N_bit_logical_operators for bitwise operations
+  N_bit_logical_operators #(.N(N)) logical_ops (
+    .A(A),
+    .B(B),
+    .en(en),
+    .AND_A_B(),  
+    .OR_A_B(),    
+    .XOR_A_B(XOR_A_B),  // Needed for equality check
+    .NOT_A(NOT_A),      // Needed for 2's complement (subtraction)
+    .NOT_B(NOT_B)       // Needed for 2's complement (subtraction)
+  );
+
+  // Unsigned subtraction
+  N_bit_Adder #(.N(N)) adder_unsigned (
+    .A(A),
+    .B(NOT_B),           
+    .cin(subtract_cin),   
+    .en(en),
+    .cout(carry_out_unsigned),
+    .Sum(A_minus_B_unsigned)
+  );
+
+  // Signed subtraction (same as unsigned subtraction in 2's complement)
+  assign A_minus_B_signed = A_minus_B_unsigned;
+
+  // Unsigned comparisons:
+  assign unsigned_A_equal_B   = &(~XOR_A_B);            // Equality check using XOR
+  assign unsigned_A_neq_B     = ~unsigned_A_equal_B;    // Not equal if not all bits are 0
+  assign unsigned_A_less_B    = ~carry_out_unsigned;    // Less than if there's a borrow (carry-out is 0)
+  assign unsigned_A_lesseq_B  = unsigned_A_less_B | unsigned_A_equal_B;
+  assign unsigned_A_greater_B = ~unsigned_A_lesseq_B;
+  assign unsigned_A_greatereq_B = ~unsigned_A_less_B;
+
+  // Signed comparisons:
+  logic A_sign, B_sign, MSB_A_minus_B_signed;
+  assign A_sign = A[N-1];  // MSB as sign for signed numbers
+  assign B_sign = B[N-1];
+  assign MSB_A_minus_B_signed = A_minus_B_signed[N-1];  // MSB for signed result
+
+  assign signed_A_equal_B   = unsigned_A_equal_B;  // Signed equality is the same as unsigned
+  assign signed_A_neq_B     = unsigned_A_neq_B;
+
+  // Implementing signed less than without using < operator
+  assign signed_A_less_B = ( A_sign & ~B_sign ) |                              // A negative, B positive
+                           (~(A_sign ^ B_sign) & MSB_A_minus_B_signed );       // A and B same sign, check MSB of A-B
+
+  assign signed_A_lesseq_B  = signed_A_less_B | signed_A_equal_B;
+  assign signed_A_greater_B = ~signed_A_lesseq_B;
+  assign signed_A_greatereq_B = ~signed_A_less_B;
 
 endmodule

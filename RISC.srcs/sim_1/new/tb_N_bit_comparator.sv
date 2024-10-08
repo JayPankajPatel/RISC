@@ -1,96 +1,94 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 09/23/2024 11:41:31 PM
-// Design Name: 
-// Module Name: tb_N_bit_comparator
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
-`timescale 1ns / 1ps
 
 module tb_N_bit_comparator;
 
-    
     localparam N = 32; 
 
-    
-    logic [N-1:0] tb_A, tb_B;
-    logic tb_A_equal_B, tb_A_neq_B, tb_A_less_B, tb_A_lesseq_B, tb_A_greater_B, tb_A_greateq_B, tb_en; 
+    logic signed [N-1:0] tb_A; 
+    logic signed [N-1:0] tb_B;
+    logic tb_en; 
 
+    // Unsigned comparison results
+    logic unsigned_A_equal_B, unsigned_A_neq_B, unsigned_A_less_B, unsigned_A_lesseq_B, unsigned_A_greater_B, unsigned_A_greatereq_B;
     
+    // Signed comparison results
+    logic signed_A_equal_B, signed_A_neq_B, signed_A_less_B, signed_A_lesseq_B, signed_A_greater_B, signed_A_greatereq_B;
+
+    // Instantiate the N_bit_comparator
     N_bit_comparator #(.N(N)) MUT (
         .A(tb_A),
         .B(tb_B),
-        .en(tb_en), 
-        .A_equal_B(tb_A_equal_B),
-        .A_neq_B(tb_A_neq_B),
-        .A_less_B(tb_A_less_B),
-        .A_lesseq_B(tb_A_lesseq_B),
-        .A_greater_B(tb_A_greater_B),
-        .A_greateq_B(tb_A_greateq_B)
+        .en(tb_en),
+
+        // Unsigned outputs
+        .unsigned_A_equal_B(unsigned_A_equal_B),
+        .unsigned_A_neq_B(unsigned_A_neq_B),
+        .unsigned_A_less_B(unsigned_A_less_B),
+        .unsigned_A_lesseq_B(unsigned_A_lesseq_B),
+        .unsigned_A_greater_B(unsigned_A_greater_B),
+        .unsigned_A_greatereq_B(unsigned_A_greatereq_B),
+
+        // Signed outputs
+        .signed_A_equal_B(signed_A_equal_B),
+        .signed_A_neq_B(signed_A_neq_B),
+        .signed_A_less_B(signed_A_less_B),
+        .signed_A_lesseq_B(signed_A_lesseq_B),
+        .signed_A_greater_B(signed_A_greater_B),
+        .signed_A_greatereq_B(signed_A_greatereq_B)
     );
 
-    
     initial begin
-        // Test case 1: A == B
-        tb_A = 8'd50; 
-        tb_B = 8'd50;
         tb_en = 1;
-        #10;
+
+        // Test 1: A = 50, B = 50
+        tb_A = $signed(32'sd50); 
+        tb_B = $signed(32'sd50);
+        #100;  // Delay to allow signals to propagate and stabilize
         $display("Test 1: A = %0d, B = %0d", tb_A, tb_B);
-        assert(tb_A_equal_B) else $fatal("Test 1 Failed: A != B when expected equal");
-        assert(tb_A_lesseq_B && tb_A_greateq_B) else $fatal("Test 1 Failed: A <= B and A >= B should be true when A == B");
+        assert(unsigned_A_equal_B && signed_A_equal_B) else $fatal("Test 1 Failed: A != B for both unsigned and signed");
+        assert(unsigned_A_lesseq_B && signed_A_lesseq_B && unsigned_A_greatereq_B && signed_A_greatereq_B) else $fatal("Test 1 Failed: A <= B and A >= B should be true when A == B");
 
-        // Test case 2: A < B
-        tb_A = 8'd10; 
-        tb_B = 8'd20;
-        #10;
+        // Test 2: A = 10, B = 20
+        tb_A = $signed(32'sd10); 
+        tb_B = $signed(32'sd20);
+        #100;
         $display("Test 2: A = %0d, B = %0d", tb_A, tb_B);
-        assert(tb_A_less_B && tb_A_lesseq_B) else $fatal("Test 2 Failed: A should be less than B");
-        assert(tb_A_greater_B == 0 && tb_A_greateq_B == 0) else $fatal("Test 2 Failed: A should not be greater than or equal to B");
+        assert(unsigned_A_less_B && signed_A_less_B) else $fatal("Test 2 Failed: A should be less than B for both unsigned and signed");
+        assert(unsigned_A_greater_B == 0 && signed_A_greater_B == 0) else $fatal("Test 2 Failed: A should not be greater than B");
 
-        // Test case 3: A > B
-        tb_A = 8'd100; 
-        tb_B = 8'd50;
-        #10;
+        // Test 3: A = 100, B = 50
+        tb_A = $signed(32'sd100); 
+        tb_B = $signed(32'sd50);
+        #100;
         $display("Test 3: A = %0d, B = %0d", tb_A, tb_B);
-        assert(tb_A_greater_B && tb_A_greateq_B) else $fatal("Test 3 Failed: A should be greater than B");
-        assert(tb_A_less_B == 0 && tb_A_lesseq_B == 0) else $fatal("Test 3 Failed: A should not be less than or equal to B");
+        assert(unsigned_A_greater_B && signed_A_greater_B) else $fatal("Test 3 Failed: A should be greater than B for both unsigned and signed");
+        assert(unsigned_A_less_B == 0 && signed_A_less_B == 0) else $fatal("Test 3 Failed: A should not be less than B");
 
-        // Test case 4: A == 0, B == 0
-        tb_A = 8'd0; 
-        tb_B = 8'd0;
-        #10;
+        // Test 4: A = 0, B = 0
+        tb_A = $signed(32'sd0); 
+        tb_B = $signed(32'sd0);
+        #100;
         $display("Test 4: A = %0d, B = %0d", tb_A, tb_B);
-        assert(tb_A_equal_B) else $fatal("Test 4 Failed: A != B when expected equal");
-        assert(tb_A_lesseq_B && tb_A_greateq_B) else $fatal("Test 4 Failed: A <= B and A >= B should be true when A == B");
+        assert(unsigned_A_equal_B && signed_A_equal_B) else $fatal("Test 4 Failed: A != B for both unsigned and signed");
+        assert(unsigned_A_lesseq_B && signed_A_lesseq_B && unsigned_A_greatereq_B && signed_A_greatereq_B) else $fatal("Test 4 Failed: A <= B and A >= B should be true when A == B");
 
-        // Test case 5: A < B (Corner case)
-        tb_A = 8'd1; 
-        tb_B = 8'd255;
-        #10;
+        // Test 5: A = 1, B = -1 (Unsigned: A < B, Signed: A > B)
+        tb_A = $signed(32'sd1); 
+        tb_B = $signed(-32'sd1);
+        #100;
         $display("Test 5: A = %0d, B = %0d", tb_A, tb_B);
-        assert(tb_A_less_B && tb_A_lesseq_B) else $fatal("Test 5 Failed: A should be less than B");
-        assert(tb_A_greater_B == 0 && tb_A_greateq_B == 0) else $fatal("Test 5 Failed: A should not be greater than or equal to B");
-        
-        tb_en = 0;
-        
-        #10;
-        $display("Test 6: A = %0d, B = %0d", tb_A, tb_B); 
+        assert(unsigned_A_less_B && signed_A_greater_B) else $fatal("Test 5 Failed: Unsigned: A should be less than B, Signed: A should be greater than B");
+        assert(unsigned_A_greatereq_B == 0 && signed_A_less_B == 0) else $fatal("Test 5 Failed: Unsigned: A should not be greater than B, Signed: A should not be less than B");
+
+       // Test 6: A = -20, B = 255 (Unsigned A > B, Signed A < B)
+    tb_A = $signed(-32'sd20); 
+    tb_B = $signed(32'sd255);
+    #100;
+    $display("Test 6: A = %0d, B = %0d", tb_A, tb_B);
+    assert(unsigned_A_greater_B && signed_A_less_B) else $fatal("Test 6 Failed: Unsigned A should be greater than B, Signed A should be less than B");
+    assert(unsigned_A_less_B == 0 && signed_A_greater_B == 0) else $fatal("Test 6 Failed: Unsigned A should not be less than B, Signed A should not be greater than B");
+        tb_en = 0;  // Disable the comparator
+
         $display("All tests passed");
         $finish;
     end

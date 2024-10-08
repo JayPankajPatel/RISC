@@ -1,0 +1,51 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../RISC.srcs/sources_1/new/ALU.sv" \
+"../../../../RISC.srcs/sources_1/new/ALU_Mux.sv" \
+
+verilog xil_defaultlib  \
+"../../../../RISC.srcs/sources_1/new/PC_Mux.v" \
+
+sv xil_defaultlib  \
+"../../../../RISC.srcs/sources_1/new/ALU_decoder.sv" \
+"../../../../RISC.srcs/sources_1/new/Extend.sv" \
+
+verilog xil_defaultlib  \
+"../../../../RISC.srcs/sources_1/new/Single_Cycle_Core.v" \
+
+sv xil_defaultlib  \
+"../../../../RISC.srcs/sources_1/new/PC.sv" \
+"../../../../RISC.srcs/sources_1/new/Control_Unit.sv" \
+"../../../../RISC.srcs/sources_1/new/PC_Plus_4.sv" \
+"../../../../RISC.srcs/sources_1/new/Register_File.sv" \
+"../../../../RISC.srcs/sources_1/new/Result_Mux.sv" \
+"../../../../RISC.srcs/sources_1/new/PC_Target.sv" \
+
+verilog xil_defaultlib  \
+"../../../../RISC.srcs/sources_1/new/Core_Datapath.v" \
+
+sv xil_defaultlib  \
+"../../../../RISC.srcs/sources_1/new/Single_Cycle_Top.sv" \
+"../../../../RISC.srcs/sources_1/new/Instruction_Memory.sv" \
+"../../../../RISC.srcs/sources_1/new/Data_Memory.sv" \
+"../../../../RISC.srcs/sources_1/new/Main_Decoder.sv" \
+"../../../../RISC.srcs/sources_1/new/One_Bit_Adder.sv" \
+"../../../../RISC.srcs/sources_1/new/N_bit_Adder.sv" \
+"../../../../RISC.srcs/sources_1/new/N_bit_compare.sv" \
+"../../../../RISC.srcs/sources_1/new/N_bit_logical.sv" \
+"../../../../RISC.srcs/sources_1/new/tb_alu.sv" \
+"../../../../RISC.srcs/sim_1/new/N_bit_adder_tb.sv" \
+"../../../../RISC.srcs/sim_1/new/full_adder_tb.sv" \
+"../../../../RISC.srcs/sim_1/new/tb_N_bit_subtract.sv" \
+"../../../../RISC.srcs/sim_1/new/tb_shiftreg.sv" \
+"../../../../RISC.srcs/sim_1/new/tb_shift_add_mult.sv" \
+"../../../../RISC.srcs/sim_1/new/tb_N_bit_comparator.sv" \
+"../../../../RISC.srcs/sim_1/new/tb_N_bit_logical.sv" \
+"../../../../RISC.srcs/sim_1/new/tb_instruction_memory.sv" \
+"../../../../RISC.srcs/sim_1/new/tb_Single_Cycle.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
