@@ -1,0 +1,14 @@
+main                    
+   addi x2, x0, 111
+   addi x3, x0, 220
+   blt x2, x3, BLT_ROUTINUE
+   
+
+ 
+ done: beq x2, x2, done
+    
+ BLT_ROUTINUE:
+  sub x4, x3, x2
+  sw x4, 0x101(x0)
+  
+ truely_done: beq x2, x2, truely_done

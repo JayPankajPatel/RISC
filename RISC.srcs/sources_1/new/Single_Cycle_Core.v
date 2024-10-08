@@ -9,7 +9,7 @@ module Single_Cycle_Core(
 			 output wire [31:0] ALUResult,WriteData
 			 );
 
-   wire 				    ALUSrc, RegWrite, Jump, Zero, PCSrc;
+   wire 				    ALUSrc, RegWrite, Jump, Zero, PCSrc, Lt, Lte; 
    wire [1:0] 				    ResultSrc,ImmSrc;
    wire [4:0] 				    ALUControl;
 
@@ -19,6 +19,8 @@ module Single_Cycle_Core(
 			.funct7(Instr[31:25]),
 			.funct7b5(Instr[30]),
 			.Zero(Zero),
+			.Lt(Lt), 
+			.Lte(Lte), 
 			.ResultSrc(ResultSrc),
 			.MemWrite(MemWrite),
 			.PCSrc(PCSrc),
@@ -28,7 +30,7 @@ module Single_Cycle_Core(
 			.ImmSrc(ImmSrc),
 			.ALUControl(ALUControl)
 			);
-
+			
    Core_Datapath Datapath(
 			  .clk(clk),
 			  .reset(reset),
@@ -41,9 +43,10 @@ module Single_Cycle_Core(
 			  .Instr(Instr),
 			  .ReadData(ReadData),
 			  .Zero(Zero),
+			  .Lt(Lt), 
+			  .Lte(Lte), 
 			  .PC(PC),
 			  .ALUResult(ALUResult),
 			  .WriteData(WriteData)
 			  );	
-
 endmodule

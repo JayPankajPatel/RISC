@@ -10,7 +10,7 @@ module Core_Datapath(
 		     input [31:0]  Instr,
 		     input [31:0]  ReadData,
 
-		     output	   Zero,
+		     output	   Zero, Lt, Lte, 
 		     output [31:0] PC,
 		     output [31:0] ALUResult,WriteData
 		     );
@@ -72,8 +72,11 @@ module Core_Datapath(
 		.B(SrcB),
 		.ALUControl(ALUControl),
 		.Zero(Zero),
+		.Lt(Lt),
+		.Lte(Lte),
 		.Result(ALUResult)
 		);
+	
    Result_Mux Result_Mux_inst(
 			      .ALUResult(ALUResult),
 			      .ReadData (ReadData),

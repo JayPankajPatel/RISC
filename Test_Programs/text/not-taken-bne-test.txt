@@ -1,0 +1,12 @@
+main:                    
+   addi x2, x0, 13
+   addi x3, x0, 79
+   bne x3, x3, BNE_ROUTINUE
+   
+
+ 
+ done: beq x2, x2, done
+    
+ BNE_ROUTINUE:
+  add x4, x3, x2
+  sw x4, 0x20(x0)

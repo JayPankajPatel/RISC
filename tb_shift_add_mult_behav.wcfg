@@ -12,12 +12,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,000.001 ns"></ZoomEndTime>
-      <Cursor1Time time="39.474 ns"></Cursor1Time>
+      <ZoomEndTime time="290.501 ns"></ZoomEndTime>
+      <Cursor1Time time="170.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="216"></NameColumnWidth>
-      <ValueColumnWidth column_width="91"></ValueColumnWidth>
+      <NameColumnWidth column_width="295"></NameColumnWidth>
+      <ValueColumnWidth column_width="119"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="18" />
    <wvobject type="logic" fp_name="/tb_Single_Cycle/clk">
@@ -56,10 +56,6 @@
       <obj_property name="ElementShortName">Instr[31:0]</obj_property>
       <obj_property name="ObjectShortName">Instr[31:0]</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/tb_Single_Cycle/DUT/core_top/Datapath/Register_inst/clk">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/tb_Single_Cycle/DUT/core_top/Datapath/Register_inst/WE3">
       <obj_property name="ElementShortName">WE3</obj_property>
       <obj_property name="ObjectShortName">WE3</obj_property>
@@ -96,5 +92,9 @@
       <obj_property name="ElementShortName">RA1[4:0]</obj_property>
       <obj_property name="ObjectShortName">RA1[4:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_Single_Cycle/MemWrite">
+      <obj_property name="ElementShortName">MemWrite</obj_property>
+      <obj_property name="ObjectShortName">MemWrite</obj_property>
    </wvobject>
 </wave_config>

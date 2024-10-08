@@ -9,8 +9,10 @@ module Instruction_Memory(
 
    initial
      begin
-	//$readmemh("/home/jay/riscvtest.txt",I_MEM_BLOCK);
-	$readmemh("/home/jay/multest.txt",I_MEM_BLOCK);
+	$readmemh("/home/jay/SJSU_EE_Masters/Classes/EE-275-Advanced-Computer-Arch/RISC/Test_Programs/machine_code/test_program.txt",I_MEM_BLOCK);
+
+
+	
      end
 
    assign RD = I_MEM_BLOCK[A[31:2]]; // word aligned

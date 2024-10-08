@@ -6,6 +6,8 @@ module ALU(
 	   input wire signed [31:0]  A,B, // made it signed for sra to work
 	   input wire  [4:0]   ALUControl,
 	   output wire 	      Zero,
+	   output wire Lt, 
+	   output wire Lte, 
 	   output wire  Overflow,
 	   output wire Underflow,
 
@@ -145,14 +147,8 @@ N_bit_comparator #(.N(32)) ALU_COMPARE_INST
         5'b00101: ResultReg = {31'b0, slt}; // SLT (Set on Less Than)
         5'b00110: ResultReg = {31'b0, sltu}; // SLTU (Set on Less Than Unsigned)
         
-        5'b00111: ResultReg = {A[31:12], 12'b0}; // LUI: Load upper immediate for A
-        //5'b01000: ResultReg = AUIPC;       // AUIPC (Add Upper Immediate to PC)
-        5'b01001: ResultReg = {B[31:12], 12'b0}; // LUI with B operand
+       
 
-//        // Shift operations:
-//        5'b01010: ResultReg = A << B[4:0];  // SLL (Shift Left Logical), using lower 5 bits of B as shift amount
-//        5'b01011: ResultReg = $signed(A) >>> B[4:0]; // SRA (Shift Right Arithmetic), sign-extended
-//        5'b01100: ResultReg = A >> B[4:0];  // SRL (Shift Right Logical), using lower 5 bits of B as shift amount
         
         // Multiply Operations
         5'b10000: ResultReg =  mul; //MUL lower result of mulitplication
@@ -163,7 +159,11 @@ N_bit_comparator #(.N(32)) ALU_COMPARE_INST
 end
 
 
-    assign Zero = ~(|ResultReg);
+   assign Zero = ~(|ResultReg);
    assign Result = ResultReg;
+   assign Lt = signed_A_less_B;
+   assign Lte = signed_A_lesseq_B; 
+   
+   
 
 endmodule

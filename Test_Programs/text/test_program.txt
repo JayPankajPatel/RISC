@@ -1,0 +1,68 @@
+_boot:                       /* x0  = 0 (hardwired zero in RISC-V) */
+    addi x1, x0, -228        /* x1 = x0 + (-228) = -228 (0xFFFFFF14 in hex, two's complement) */
+    addi x2, x0, 1304        /* x2 = x0 + 1304   = 1304 (0x00000518 in hex) */
+    add  x3, x2, x1          /* x3 = x2 + x1     = 1304 + (-228) = 1076 (0x00000434 in hex) */
+    sub  x4, x3, x2          /* x4 = x3 - x2     = 1076 - 1304  = -228 (0xFFFFFF14 in hex) */
+    sw   x4, 0x123(x0)       /* Store x4 (-228) into memory at address 0x123 (291 decimal) */
+    lw   x5, 0x123(x0)       /* Load from memory address 0x123 into x5, so x5 = -228 (0xFFFFFF14) */
+    andi x6, x5, 202         /* x6 = x5 & 202 = 0xFFFFFF14 & 0xCA = 0x00000000 (AND with mask 202) */
+    ori  x7, x6, -402        /* x7 = x6 | (-402) = 0x00000000 | 0xFFFFFE6E = 0xFFFFFE6E (OR with -402) */
+
+before_branch:
+    /* Test EqualTo (x8 == x9) */
+    addi x8, x0, 5           /* x8 = 5 */
+    addi x9, x0, 5           /* x9 = 5 */
+
+    beq x8, x9, eq_pass      /* Test EqualTo (branch if x8 == x9) */
+    j zero_all_registers     /* If EqualTo test fails, zero all registers */
+
+eq_pass:
+    addi x10, x0, 10         /* Store a unique value (10) in x10 if EqualTo passes */
+
+branch_done1:
+
+    /* Test LessThan (x8 < x9) */
+    addi x8, x0, 3           /* x8 = 3 */
+    addi x9, x0, 5           /* x9 = 5 */
+
+    blt x8, x9, lt_pass      /* Test LessThan (branch if x8 < x9 using alias `blt`) */
+    j zero_all_registers     /* If LessThan test fails, zero all registers */
+
+lt_pass:
+    addi x11, x0, 20         /* Store a unique value (20) in x11 if LessThan passes */
+
+branch_done2:
+
+    /* Test LessThanEqualTo (x8 <= x9) */
+    addi x8, x0, 4           /* x8 = 4 */
+    addi x9, x0, 4           /* x9 = 4 */
+
+    ble x8, x9, leq_pass     /* Test LessThanEqualTo (branch if x8 <= x9 using alias `ble`) */
+    j zero_all_registers     /* If LessThanEqualTo test fails, zero all registers */
+
+leq_pass:
+    addi x12, x0, 30         /* Store a unique value (30) in x12 if LessThanEqualTo passes */
+
+branch_done3:
+
+    /* Sum all the unique values (10 + 20 + 30 = 60) */
+    add  x13, x10, x11       /* x13 = x10 + x11 = 10 + 20 = 30 */
+    add  x13, x13, x12       /* x13 = x13 + x12 = 30 + 30 = 60 */
+
+    /* Store the sum (60) to memory location 0x275 */
+    not x13, x13
+    sw   x13, 0x275(x0)      /* Store the value of x13 (-61) into memory location 0x275 (629 decimal) */
+    j done
+
+zero_all_registers:
+    /* Loop to zero out all registers */
+    li x1, 31               /* Start with the highest register */
+zero_loop:
+    addi x1, x1, -1         /* Decrement register index (x1 keeps track of the current register to zero) */
+    beq x1, x0, done        /* If x1 is 0, we're done zeroing out registers */
+    addi x2, x0, 0          /* Set x2 = 0 */
+    sw x2, 0(x1)            /* Write zero to register x1 */
+    j zero_loop             /* Jump back to zero_loop to continue */
+
+done:
+    beq x0, x0, done        /* Infinite loop: Program stays here */

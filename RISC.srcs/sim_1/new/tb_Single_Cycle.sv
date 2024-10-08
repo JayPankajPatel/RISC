@@ -25,8 +25,8 @@ end
 always @(posedge clk) begin
     if (MemWrite) begin
         // Check if data 25 is written to address 100
-        if (DataAddr === 100 && WriteData === 25) begin
-            $display("PASSED: Data 25 written at address 100");
+        if (DataAddr === 'h275 && WriteData === -61) begin
+            $display("PASSED: Data -61 written at address 0x275");
             // Continue testing for the next operation, or stop if the test is complete
         end
         // (Optional) Uncomment for second store check

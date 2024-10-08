@@ -1,0 +1,14 @@
+main:                    
+   addi x2, x0, -213
+   addi x3, x0, 69
+   bge x2, x3, BGE_ROUTINUE
+   
+
+ 
+ done: beq x2, x2, done
+    
+ BGE_ROUTINUE:
+  sub x4, x3, x2
+  sw x4, 0x123(x0)
+  
+ truely_done: beq x2, x2, truely_done
