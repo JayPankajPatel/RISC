@@ -30,9 +30,9 @@ module N_bit_adder #(
 );
 
   wire [N:0] carry_out;  // 33 bits
-  
+
   assign carry_out[0] = cin;
- 
+
 
   one_bit_adder first_adder (
       .a(A[0]),

@@ -20,8 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module tb_instruction_memory(
-    );
-    
-    
+module tb_instruction_memory ();
+
+
 endmodule

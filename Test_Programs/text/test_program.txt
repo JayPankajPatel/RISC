@@ -50,7 +50,8 @@ branch_done3:
     add  x13, x13, x12       /* x13 = x13 + x12 = 30 + 30 = 60 */
 
     /* Store the sum (60) to memory location 0x275 */
-    not x13, x13
+    not x13, x13             /*x13 =  -61 */
+    mul x13, x13, x10        /*x13 =  -610  x10 = 10*/
     sw   x13, 0x275(x0)      /* Store the value of x13 (-61) into memory location 0x275 (629 decimal) */
     j done
 
@@ -64,5 +65,5 @@ zero_loop:
     sw x2, 0(x1)            /* Write zero to register x1 */
     j zero_loop             /* Jump back to zero_loop to continue */
 
-done:
-    beq x0, x0, done        /* Infinite loop: Program stays here */
+done: beq x0, x0, done
+ 

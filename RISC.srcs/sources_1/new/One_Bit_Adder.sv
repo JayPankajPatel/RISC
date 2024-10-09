@@ -20,24 +20,24 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module One_Bit_Adder(
-   input a,
+module One_Bit_Adder (
+    input a,
     input b,
     input en,
     input cin,
     output reg sum,
     output reg cout
-    );
-    
-    always@(*) begin
-        if (en) begin 
-            sum = a ^ b ^ cin; 
-            cout = (a & b) | (b & cin) | (a & cin); 
-        end
-        else begin 
-            sum = 0;
-            cout = 0; 
-        end
+);
+
+  always @(*) begin
+    if (en) begin
+      sum  = a ^ b ^ cin;
+      cout = (a & b) | (b & cin) | (a & cin);
+    end else begin
+      sum  = 0;
+      cout = 0;
     end
+  end
 
 endmodule
+

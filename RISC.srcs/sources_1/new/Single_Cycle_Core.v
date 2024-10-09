@@ -1,52 +1,54 @@
 `timescale 1ns / 1ps
 
-module Single_Cycle_Core(
-			 input wire 	    clk,reset,
-			 input wire [31:0]  Instr,
-			 input wire [31:0]  ReadData,
-			 output wire [31:0] PC,
-			 output wire 	    MemWrite,
-			 output wire [31:0] ALUResult,WriteData
-			 );
+module Single_Cycle_Core (
+    input  wire        clk,
+    reset,
+    input  wire [31:0] Instr,
+    input  wire [31:0] ReadData,
+    output wire [31:0] PC,
+    output wire        MemWrite,
+    output wire [31:0] ALUResult,
+    WriteData
+);
 
-   wire 				    ALUSrc, RegWrite, Jump, Zero, PCSrc, Lt, Lte; 
-   wire [1:0] 				    ResultSrc,ImmSrc;
-   wire [4:0] 				    ALUControl;
+  wire ALUSrc, RegWrite, Jump, Zero, PCSrc, Lt, Lte;
+  wire [1:0] ResultSrc, ImmSrc;
+  wire [4:0] ALUControl;
 
-   Control_Unit Control(
-			.op(Instr[6:0]),
-			.funct3(Instr[14:12]),
-			.funct7(Instr[31:25]),
-			.funct7b5(Instr[30]),
-			.Zero(Zero),
-			.Lt(Lt), 
-			.Lte(Lte), 
-			.ResultSrc(ResultSrc),
-			.MemWrite(MemWrite),
-			.PCSrc(PCSrc),
-			.ALUSrc(ALUSrc),
-			.RegWrite(RegWrite),
-			.Jump(Jump),
-			.ImmSrc(ImmSrc),
-			.ALUControl(ALUControl)
-			);
-			
-   Core_Datapath Datapath(
-			  .clk(clk),
-			  .reset(reset),
-			  .ResultSrc(ResultSrc),
-			  .PCSrc(PCSrc),
-			  .ALUSrc(ALUSrc),
-			  .RegWrite(RegWrite),
-			  .ImmSrc(ImmSrc),
-			  .ALUControl(ALUControl),
-			  .Instr(Instr),
-			  .ReadData(ReadData),
-			  .Zero(Zero),
-			  .Lt(Lt), 
-			  .Lte(Lte), 
-			  .PC(PC),
-			  .ALUResult(ALUResult),
-			  .WriteData(WriteData)
-			  );	
+  Control_Unit Control (
+      .op(Instr[6:0]),
+      .funct3(Instr[14:12]),
+      .funct7(Instr[31:25]),
+      .funct7b5(Instr[30]),
+      .Zero(Zero),
+      .Lt(Lt),
+      .Lte(Lte),
+      .ResultSrc(ResultSrc),
+      .MemWrite(MemWrite),
+      .PCSrc(PCSrc),
+      .ALUSrc(ALUSrc),
+      .RegWrite(RegWrite),
+      .Jump(Jump),
+      .ImmSrc(ImmSrc),
+      .ALUControl(ALUControl)
+  );
+
+  Core_Datapath Datapath (
+      .clk(clk),
+      .reset(reset),
+      .ResultSrc(ResultSrc),
+      .PCSrc(PCSrc),
+      .ALUSrc(ALUSrc),
+      .RegWrite(RegWrite),
+      .ImmSrc(ImmSrc),
+      .ALUControl(ALUControl),
+      .Instr(Instr),
+      .ReadData(ReadData),
+      .Zero(Zero),
+      .Lt(Lt),
+      .Lte(Lte),
+      .PC(PC),
+      .ALUResult(ALUResult),
+      .WriteData(WriteData)
+  );
 endmodule

@@ -21,7 +21,7 @@ module N_bit_Adder #(
       .cin(carry_out[0]),  // Carry-in for bit 0 is the input cin
       .en(en),
       .sum(Sum[0]),
-      .cout(carry_out[1])   // Carry-out for bit 0
+      .cout(carry_out[1])  // Carry-out for bit 0
   );
 
   // Generate loop for the remaining bits (1 to N-1)
@@ -31,10 +31,10 @@ module N_bit_Adder #(
       One_Bit_Adder cascade (
           .a(A[i]),
           .b(B[i]),
-          .cin(carry_out[i]),   // Carry-in from the previous bit
+          .cin(carry_out[i]),  // Carry-in from the previous bit
           .en(en),
           .sum(Sum[i]),
-          .cout(carry_out[i+1]) // Carry-out to the next bit
+          .cout(carry_out[i+1])  // Carry-out to the next bit
       );
     end
   endgenerate
