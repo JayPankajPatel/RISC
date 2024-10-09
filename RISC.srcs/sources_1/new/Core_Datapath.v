@@ -19,7 +19,7 @@ module Core_Datapath(
    wire [31:0]			   ImmExt;
    wire [31:0]			   SrcA,SrcB;
    wire [31:0]			   Result;
-
+   wire overflow, underflow;
 
    PC PC_inst (
 	       .clk(clk),
@@ -45,16 +45,22 @@ module Core_Datapath(
 		     .PC_Next(PCnext)
 		     );
 
-   Register_File Register_inst(
-			       .clk(clk),
-			       .WE3(RegWrite),
-			       .RA1(Instr[19:15]),
-			       .RA2(Instr[24:20]),
-			       .WA3((Instr[11:7])),
-			       .WD3(Result),
-			       .RD1(SrcA),
-			       .RD2(WriteData)
-			       );
+          Register_File Register_inst (
+            .clk(clk),
+            .WE3(RegWrite),
+            .Lte(Lte),              
+            .Lt(Lt),                
+            .Zero(Zero),            
+            .underflow(underflow),  
+            .overflow(overflow),    
+            .RA1(Instr[19:15]),
+            .RA2(Instr[24:20]),
+            .WA3(Instr[11:7]),
+            .WD3(Result),
+            .RD1(SrcA),
+            .RD2(WriteData)
+        );
+        
    Extend Extend_inst(
 		      .Instr(Instr[31:7]),
 		      .ImmSrc(ImmSrc),
@@ -67,15 +73,18 @@ module Core_Datapath(
 			.ALUSrc(ALUSrc),
 			.B(SrcB)
 			);
-   ALU ALU_inst(
-		.A(SrcA),
-		.B(SrcB),
-		.ALUControl(ALUControl),
-		.Zero(Zero),
-		.Lt(Lt),
-		.Lte(Lte),
-		.Result(ALUResult)
-		);
+    ALU ALU_inst (
+        .A(SrcA),             
+        .B(SrcB),             
+        .ALUControl(ALUControl), 
+        .Zero(Zero),          
+        .Lt(Lt),              
+        .Lte(Lte),            
+        .Overflow(overflow),  
+        .Underflow(underflow),
+        .Result(ALUResult)    
+    );
+
 	
    Result_Mux Result_Mux_inst(
 			      .ALUResult(ALUResult),

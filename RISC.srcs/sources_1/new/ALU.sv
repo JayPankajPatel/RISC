@@ -51,18 +51,7 @@ wire signed_A_greatereq_B;
     .Sum(Sum)
 );
 
-   
-//   N_bit_Adder #(
-//    .N(32)
-//) ALU_AUIPC(
-//    .A(A),
-//    .B({{20{B[31]}}, B[31:12]} << 12),
-//    // if you aren't using cin make sure to set it to zero. 
-//    .cin(0),
-//    .en(1'b1),
-//    .cout(),
-//    .Sum(AUIPC)
-//);
+
 
 
 

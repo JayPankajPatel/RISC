@@ -17,7 +17,7 @@
      begin
 	case(ALUOp)
           2'b00:  ALUControl = 5'b0000; //addition
-          2'b01:  ALUControl = 5'b0001; //subtraction or auipc
+          2'b01:  ALUControl = 5'b0001; //subtraction 
           2'b10: //ALUOp = 2'b10 and beyond
             case(funct3)//R-type or I-type ALU
               3'b000:    
@@ -33,19 +33,11 @@
               3'b010: ALUControl = 5'b00101; //slt,slti
               3'b011: ALUControl = 5'b00110; //sltu, sltui
               3'b100: ALUControl = 5'b00100; //xor
-              3'b101: 
-                if (funct7b5) ALUControl = 5'b01011; //sra
-                else ALUControl = 5'b01100; // srl
+ 
                
               3'b110: ALUControl = 5'b00011; //or,ori
               3'b111: ALUControl = 5'b00010; //and,andi
               default: ALUControl = 5'bxxxxx; 
-            endcase
-          2'b11: //ALUOp = 2'b11 and beyond
-            case(funct3)
-              3'b000: ALUControl = 5'b001000; // AUIPC
-              3'b001: ALUControl = 5'b001001; // LUI
-              default: ALUControl = 5'bxxxxx;
             endcase
           default: ALUControl = 5'bxxxxx;
           //ALU Control
